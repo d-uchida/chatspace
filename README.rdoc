@@ -1,3 +1,4 @@
+# README
 ## members table
 
 |Column|type|options|
@@ -5,10 +6,10 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
+
 ### Association
 - belongs_to :groups
 - belongs_to :users
-
 
 
 ## users table
@@ -17,6 +18,7 @@
 |user_id|integer|foreign_key: true|
 |name|string|null: false|
 |email|string|null: false|
+
 
 ### Association
 - has_many :messages
@@ -41,7 +43,6 @@
 |user_id|integer|foreign_key: true|
 |group_id|integer|foreign_key: true|
 
-
 ### Association
 - belongs_to :users
 - belongs_to :groups
@@ -56,4 +57,4 @@
 |user_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to: users
+- belongs_to: users 
