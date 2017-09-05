@@ -10,6 +10,7 @@
 - belongs_to :users
 
 
+
 ## users table
 |Column|type|options|
 |------|----|-------|
