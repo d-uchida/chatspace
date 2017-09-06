@@ -38,9 +38,9 @@
 ## messages table
 |Column|type|options|
 |------|----|-------|
-|body|text||
+|body|text|null: false|
 |image|string||
-|groupu_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 |user_id|integer|foreign_key: true|
 
 ### Association
