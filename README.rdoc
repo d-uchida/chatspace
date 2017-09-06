@@ -1,26 +1,14 @@
-## members table
-
-|Column|type|options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :groups
-- belongs_to :users
-
-
-
 ## users table
 |Column|type|options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|name|string|null: false|
-|email|string|null: false|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
-- has_many :groups, through: :usergroups
+- has_many :groups, through: :user_groups
+- has_many :user_groups
 
 
 
@@ -31,29 +19,31 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many: messages
-- has_many: users, through: :user_groups
+- has_many :messages
+- has_many :users, through: :user_groups
+- has_many :user_groups
 
 
-## user_group table
+## user_groups table
 |Column|type|options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 
 ## messages table
 |Column|type|options|
 |------|----|-------|
-|body|text||
+|body|text|null: false|
 |image|string||
-|groupu_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 |user_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to: users
+- belongs_to :user
+- belogns_to :group
