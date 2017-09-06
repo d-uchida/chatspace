@@ -14,7 +14,6 @@
 ## users table
 |Column|type|options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
 |name|string|null: false|
 |email|string|null: false|
 
