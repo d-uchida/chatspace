@@ -6,8 +6,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 
 
@@ -43,8 +43,8 @@
 
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 
 ## messages table
@@ -56,4 +56,4 @@
 |user_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to: users
+- belongs_to: user
