@@ -1,1 +1,130 @@
 @import "./reset";
+
+
+
+.top-bar {
+  background-color : #38AEF0;
+  color            : white;
+  align            : center;
+}
+
+.contents {
+  $top_height    : 100px;
+  $middle_height : 700px;
+
+
+
+  .left-bar {
+  	float       : left;
+    color       : #FFFFFF;
+    font-weight : bold;
+    width       : 300px;
+    height      : 100%;
+
+
+     &__top {
+       height           : $top_height;
+       display          : table-cell;
+       background-color : #253141;
+       width            : 260px;
+       padding-top      : 35px;
+       padding-left     : 20px;
+       padding-right    : 20px;
+      }
+
+      &__bottom {
+       background-color : #2f3e51;
+       width            : 260px;
+       padding-left     : 20px;
+       padding-right    : 20px;
+       padding-top      : 40px;
+       height           : $middle_height;
+      }
+
+  }
+
+  .right-messages {
+      margin-left: 300px;
+      padding: 0 40px;
+
+    &__top{
+      padding-top      : 35px;
+      height           : $top_height;
+      background-color : gray;
+
+    }
+
+    &__middle {
+      background-color : orange;
+      padding-top      : 40px;
+      height           : $middle_height ;
+
+    }
+  }
+}
+// .top-bar {
+// 	background-color: #38AEF0;
+// 	color: white;
+//     align: center;
+// }
+
+// .upper-information {
+//     width: 100%;
+
+//     &__left {
+//       float:left;
+//       background-color : #253141;
+//       width            : 260px;
+//       padding-left     : 20px;
+//       padding-right    : 20px;
+//       padding-bottom   : 20px;
+//       height           : 80px;
+//       color            : #FFFFFF;
+//       margin-right     : 40px;
+//       display          : table-cell;
+//       vertical-align   : middle;
+//      }
+
+//     &__right {
+//       position         : right;
+//       color            : black;
+//       height           : 100px;
+//       background-color : gray;
+      
+//       margin-left      : 40px;
+//     }
+
+// }
+
+// .lower-contents {
+// 	clear: both;
+
+//     &__left{
+//     float: left;
+//     width: 260px;
+//     padding-left:20px;
+//     padding-right:20px;
+//     height: 100px;
+//     color: #FFFFFF;
+//     background-color: #2f3e51;
+//     height: 800px;
+//     margin-right: 40px;
+//     }
+
+//     &__right{
+//      padding-left: 40px;
+//      background-color: orange;
+//      height: 800px;
+//     }
+
+// }
+
+
+
+
+
+
+
+
+
+
