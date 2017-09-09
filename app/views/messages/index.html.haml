@@ -11,11 +11,27 @@
           = link_to messages_path do
             %i.fa.fa-cog
             %i.fa.fa-pencil-square-o
-        %div.left-bar__bottom
-          left bar bottom
+        %div.left-bar__main
+          %p.left-bar__main--group_name
+            group name 1
+          %p.left-bar__main--latest_message
+            messageはありません。
+          %p.left-bar__main--group_name
+            group name 2
+          %p.left-bar__main--latest_message
+            messageはありません。
+          %p.left-bar__main--group_name
+            group name 3
+          %p.left-bar__main--latest_message
+            messageはありません。
+
 
       %div.right-messages
         %div.right-messages__top
+          %p.right-messages__top--groupname
+            sample group
+          %p.right-messages__top--member
+            Member: Daisuke Uchida
           %p.right-messages__top--groupname
             sample group
           %p.right-messages__top--member

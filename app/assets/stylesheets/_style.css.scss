@@ -4,6 +4,7 @@ $leftbar-width           : 300px;
 $left-bar-top__height    : 100px;
 $white                   : #FFFFFF;
 $skyblue                 : #38AEF0;
+$black                   : #999999;
 $left-bar__bottom-color  : #2f3e51;
 $left-bar-padding        : 20px;
 $right-bar-padding       : 40px;
@@ -61,10 +62,19 @@ html {
 
           }
 
-          &__bottom {
+          &__main {
             background-color  : $left-bar__bottom-color;
             color             : $white;
             height            : calc(100% - #{$left-bar-top__height});
+            &--group_name {
+              padding-top: 20px;
+              padding-left:$left-bar-padding;
+              }
+            &--latest_message {
+              padding-left:$left-bar-padding;
+              padding-bottom: 20px;
+                }
+            
           }
 
       }
