@@ -1,0 +1,107 @@
+
+$top-bar-height          : 25px;
+$leftbar-width           : 300px;
+$left-bar-top__height    : 100px;
+$white                   : #FFFFFF;
+$skyblue                 : #38AEF0;
+$left-bar__bottom-color  : #2f3e51;
+$left-bar-padding        : 20px;
+
+html {
+  height: 100%;
+
+  body {
+
+    height: 100%;
+
+
+    .contents {
+      height     : 100%;
+
+
+
+      .top-bar {
+        background-color  : $skyblue;
+        height            : $top-bar-height;
+        color             : $white;
+        text-align        : center;
+        font-size         : 13px;
+
+
+      }
+
+      .left-bar {
+        width             : $leftbar-width;
+        background-color  : orange;
+        float             : left;
+        height            : calc(100% - #{$top-bar-height});
+
+          &__top {
+            height            : $left-bar-top__height;
+            background-color  : #253141;
+            color             : $white;
+            width: $leftbar-width;
+            font-size: 16px;
+            font-weight: bold;
+            display: table-cell;
+            vertical-align: middle;
+              &--title {
+                margin: 0 $left-bar-padding;
+                float: left;
+              }
+              i.fa {
+                color        : $white;
+                font-size    : 20px;
+                float        : right;
+              }
+               i.fa.fa-cog {
+                margin-right : $left-bar-padding;
+                margin-left  : 10px;
+               }
+
+          }
+
+          &__bottom {
+            background-color  : $left-bar__bottom-color;
+            color             : $white;
+            height            : calc(100% - #{$left-bar-top__height});
+          }
+
+      }
+
+
+      .right-messages {
+        background-color  : green;
+        width             : calc(100% - $leftbar-width);
+        height            : calc(100% - #{$top-bar-height});
+        margin-left       : $leftbar-width;
+
+          &__top {
+            height : $left-bar-top__height;
+          }
+          &__middle {
+            background-color  : orange;
+            height            : calc(100% - #{$left-bar-top__height} );
+            position          : relative;
+              &--bottom {
+                position          : absolute;
+                height            : 90px;
+                background-color  : red;
+                width             : 100%;
+                float             : right;
+                bottom            : 0;
+                &___typearea {
+                  background-color  : white;
+                  height            : 50px;
+                  width             : calc(100% - $leftbar-width);
+                }
+                &___sendbutton {
+                  float  : right;
+     
+                   }
+             }
+           }
+          }
+      }
+    }
+  }
