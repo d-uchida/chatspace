@@ -6,6 +6,8 @@ $white                   : #FFFFFF;
 $skyblue                 : #38AEF0;
 $left-bar__bottom-color  : #2f3e51;
 $left-bar-padding        : 20px;
+$right-bar-padding       : 40px;
+$contents-padding-top    : 35px;
 
 html {
   height: 100%;
@@ -17,8 +19,6 @@ html {
 
     .contents {
       height     : 100%;
-
-
 
       .top-bar {
         background-color  : $skyblue;
@@ -37,14 +37,14 @@ html {
         height            : calc(100% - #{$top-bar-height});
 
           &__top {
-            height            : $left-bar-top__height;
+            height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
             background-color  : #253141;
             color             : $white;
             width: $leftbar-width;
             font-size: 16px;
             font-weight: bold;
-            display: table-cell;
-            vertical-align: middle;
+            padding-top: $contents-padding-top;
+
               &--title {
                 margin: 0 $left-bar-padding;
                 float: left;
@@ -71,13 +71,27 @@ html {
 
 
       .right-messages {
-        background-color  : green;
+
         width             : calc(100% - $leftbar-width);
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
 
           &__top {
-            height : $left-bar-top__height;
+            height : $left-bar-top__height ;
+              &--groupname {
+                font-size: 20px;
+                padding-left: $right-bar-padding;
+                padding-top: $contents-padding-top;
+                color: #333333;
+              }
+              &--member {
+                padding-left: $right-bar-padding;
+                font-size: 12px;
+                color: #999999;
+                padding-top: 15px;
+
+              }
+
           }
           &__middle {
             background-color  : orange;
