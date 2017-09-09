@@ -6,7 +6,11 @@
         チャットグループが作成されました。
       %div.left-bar
         %div.left-bar__top
-          left top
+          %h1.left-bar__top--title
+            Daisuke Uchiuda
+          = link_to messages_path do
+            %i.fa.fa-cog
+            %i.fa.fa-pencil-square-o
         %div.left-bar__bottom
           left bar bottom
 
