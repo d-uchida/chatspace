@@ -1,14 +1,10 @@
 
 html {
   height: 100%;
-
   body {
     height: 100%;
-
-
     .contents {
       height     : 100%;
-
       .top-bar {
         background-color  : $skyblue;
         height            : $top-bar-height;
@@ -16,124 +12,105 @@ html {
         text-align        : center;
         font-size         : 13px;
       }
-
       .left-bar {
         width             : $leftbar-width;
         background-color  : orange;
         float             : left;
         height            : calc(100% - #{$top-bar-height});
-
-          &__top {
-            height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
-            background-color  : #253141;
-            color             : $letter-white;
-            width             : $leftbar-width;
-            font-size         : 16px;
-            font-weight       : bold;
-            padding-top       : $contents-padding-top;
-
-              &--title {
-                margin  : 0 $left-bar-padding;
-                float   : left;
-              }
-              i.fa.fa-pencil-square-o {
-                color        : $letter-white;
-                font-size    : 20px;
-                float        : right;
-              }
-              i.fa.fa-cog {
-                color        : $letter-white;
-                font-size    : 20px;
-                float        : right;
-                margin-right : $left-bar-padding;
-                margin-left  : 10px;
-              }
-
+        &__top {
+          height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
+          background-color  : #253141;
+          color             : $letter-white;
+          width             : $leftbar-width;
+          font-size         : 16px;
+          font-weight       : bold;
+          padding-top       : $contents-padding-top;
+          &--title {
+            margin  : 0 $left-bar-padding;
+            float   : left;
           }
-
-          &__main {
-            background-color  : $left-bar__bottom-color;
-            color             : $letter-white;
-            height            : calc(100% - #{$left-bar-top__height});
-            &--group_name {
-              padding-top   : 20px;
-              padding-left  :$left-bar-padding;
-              }
-            &--latest_message {
-              padding-left    :$left-bar-padding;
-              padding-bottom  : 20px;
-                }
+          i.fa.fa-pencil-square-o {
+            color        : $letter-white;
+            font-size    : 20px;
+            float        : right;
           }
-
+          i.fa.fa-cog {
+            color        : $letter-white;
+            font-size    : 20px;
+            float        : right;
+            margin-right : $left-bar-padding;
+            margin-left  : 10px;
+            }
+          }
+        &__main {
+          background-color  : $left-bar__bottom-color;
+          color             : $letter-white;
+          height            : calc(100% - #{$left-bar-top__height});
+          &--group_name {
+            padding-top   : 20px;
+            padding-left  :$left-bar-padding;
+          }
+          &--latest_message {
+            padding-left    :$left-bar-padding;
+            padding-bottom  : 20px;
+          }
+        }
       }
-
-
       .right-messages {
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
-          &__top {
-            height : $left-bar-top__height;
-            margin-bottom     : $upper-righ-margin-bottom;
-             &--edit_button {
-               float             :right;
-               margin-top        : 28px;
-               margin-right      : 40px;
-               height            : 40px;
-               padding-left      : 20px;
-               padding-right     : 20px;
-               font-size         : 17px;
-               color             : #38AEF0;
-               border            : 1px solid #38AEF0;
-               background-color  : white;
-
-              }
-
-              &--groupname {
-                font-size     : 20px;
-                padding-left  : $right-bar-padding;
-                padding-top   : $contents-padding-top;
-                color         : #333333;
-              }
-              &--member {
-                padding-left  : $right-bar-padding;
-                font-size     : 12px;
-                color         : #999999;
-                padding-top   : 15px;
-              }
+        &__top {
+          height : $left-bar-top__height;
+          margin-bottom     : $upper-righ-margin-bottom;
+          &--edit_button {
+            float             :right;
+            margin-top        : 28px;
+            margin-right      : 40px;
+            height            : 40px;
+            padding-left      : 20px;
+            padding-right     : 20px;
+            font-size         : 17px;
+            color             : #38AEF0;
+            border            : 1px solid #38AEF0;
+            background-color  : white;
           }
-
-          &__middle {
-            height        : calc(100% - #{$left-bar-top__height} - 100px - #{$upper-righ-margin-bottom});
+          &--groupname {
+            font-size     : 20px;
             padding-left  : $right-bar-padding;
-
-
-            &--user {
-              padding-top  : $user_comment_margin-top;
-              font         : 16px;
-              font-weight  : bold;
-              color        : #454A54;
-              width        : 100%;
-            }
-            &--user:after {
-              content      : "17/09/11 15:59:10";
-              font-size    : 12px;
-              color        : #999999;
-              margin-left  : 10px;
-
-            }
-
-            &--message {
-              font-size  : 14px;
-            }
-
-
-
+            padding-top   : $contents-padding-top;
+            color         : #333333;
+          }
+          &--member {
+            padding-left  : $right-bar-padding;
+            font-size     : 12px;
+            color         : #999999;
+            padding-top   : 15px;
+          }
+        }
+        &__middle {
+          height        : calc(100% - #{$left-bar-top__height} - 100px - #{$upper-righ-margin-bottom});
+          padding-left  : $right-bar-padding;
+          &--user {
+            padding-top  : $user_comment_margin-top;
+            font         : 16px;
+            font-weight  : bold;
+            color        : #454A54;
+            width        : 100%;
+          }
+          &--user:after {
+            content      : "17/09/11 15:59:10";
+            font-size    : 12px;
+            color        : #999999;
+            margin-left  : 10px;
+          }
+          &--message {
+            font-size  : 14px;
+          }
           &--bottom {
             bottom            : 0;
             height            : $bottom_margin_height;
             background-color  : #DDDDDD;
             margin-top        : 10px;
-
             &___message_area {
               &__text {
                 height          : 50px;
@@ -146,36 +123,33 @@ html {
                 position        : relative;
                 border          : none;
               }
-                              // }
-                i.fa.fa-file-image-o {
-                  color             : black;
-                  background-color  : white;
-                  width             : 25px;
-                  margin-top        : $bottom_margin_top;
-                  padding-top       : 19px;
-                  padding-bottom    : calc(50px - 19px - 20px);
-                  font-size         : 20px;
-                  position          : absolute;
-                  border            : none
-                }
-                  &__send {
-                    background-color: #38AEF0;
-                    width         : 100px;
-                    height        : 50px;
-                    color         : white;
-                    right         : 0;
-                    margin-top    : $bottom_margin_top;
-                    margin-left   : 15px;
-   
-                    margin-right  : $right-bar-padding;
-                    position      : absolute;
-                    border        : none;
-
-                  }
-                }
+              i.fa.fa-file-image-o {
+                color             : black;
+                background-color  : white;
+                width             : 25px;
+                margin-top        : $bottom_margin_top;
+                padding-top       : 19px;
+                padding-bottom    : calc(50px - 19px - 20px);
+                font-size         : 20px;
+                position          : absolute;
+                border            : none
               }
+              &__send {
+                background-color: #38AEF0;
+                width         : 100px;
+                height        : 50px;
+                color         : white;
+                right         : 0;
+                margin-top    : $bottom_margin_top;
+                margin-left   : 15px;
+                margin-right  : $right-bar-padding;
+                position      : absolute;
+                border        : none;
+              }
+            }
           }
         }
       }
     }
   }
+}
