@@ -60,8 +60,8 @@ html {
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
         &__top {
-          height : $left-bar-top__height;
-          margin-bottom     : $upper-righ-margin-bottom;
+        height : $left-bar-top__height;
+        margin-bottom     : $upper-righ-margin-bottom;
           &--edit_button {
             float             :right;
             margin-top        : 28px;
