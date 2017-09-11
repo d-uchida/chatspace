@@ -2,7 +2,8 @@
 $top-bar-height          : 25px;
 $leftbar-width           : 300px;
 $left-bar-top__height    : 100px;
-$white                   : #FFFFFF;
+$letter-white            : #FFFFFF;
+$background-white        : #AAAAAA;
 $skyblue                 : #38AEF0;
 $black                   : #999999;
 $left-bar__bottom-color  : #2f3e51;
@@ -24,7 +25,7 @@ html {
       .top-bar {
         background-color  : $skyblue;
         height            : $top-bar-height;
-        color             : $white;
+        color             : $letter-white;
         text-align        : center;
         font-size         : 13px;
 
@@ -40,7 +41,7 @@ html {
           &__top {
             height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
             background-color  : #253141;
-            color             : $white;
+            color             : $letter-white;
             width: $leftbar-width;
             font-size: 16px;
             font-weight: bold;
@@ -50,21 +51,24 @@ html {
                 margin: 0 $left-bar-padding;
                 float: left;
               }
-              i.fa {
-                color        : $white;
+              i.fa.fa-pencil-square-o {
+                color        : $letter-white;
                 font-size    : 20px;
                 float        : right;
               }
-               i.fa.fa-cog {
+              i.fa.fa-cog {
+                color        : $letter-white;
+                font-size    : 20px;
+                float        : right;
                 margin-right : $left-bar-padding;
                 margin-left  : 10px;
-               }
+              }
 
           }
 
           &__main {
             background-color  : $left-bar__bottom-color;
-            color             : $white;
+            color             : $letter-white;
             height            : calc(100% - #{$left-bar-top__height});
             &--group_name {
               padding-top: 20px;
@@ -81,13 +85,13 @@ html {
 
 
       .right-messages {
-
         width             : calc(100% - $leftbar-width);
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
 
           &__top {
-            height : $left-bar-top__height ;
+            height : $left-bar-top__height;
+
               &--groupname {
                 font-size: 20px;
                 padding-left: $right-bar-padding;
@@ -104,28 +108,72 @@ html {
 
           }
           &__middle {
-            background-color  : orange;
-            height            : calc(100% - #{$left-bar-top__height} );
-            position          : relative;
-              &--bottom {
-                position          : absolute;
-                height            : 90px;
-                background-color  : red;
-                width             : 100%;
-                float             : right;
-                bottom            : 0;
-                &___typearea {
-                  background-color  : white;
-                  height            : 50px;
-                  width             : calc(100% - $leftbar-width);
+            height            : calc(100% - #{$left-bar-top__height} - 100px);
+            padding-left: $right-bar-padding;
+
+            &--user {
+              font-size: 16px;
+            }
+            &--date_n_time {
+              font-size: 12px
+            }
+            &--message {
+              font-size: 14px;
+            }
+
+$bottom_margin_top: 20px;
+$bottom_margin_height: 90px;
+
+          &--bottom {
+            bottom: 0;
+            height: $bottom_margin_height;
+            background-color: #DDDDDD;
+            margin-top: 10px;
+
+            &___message_area {
+              &__text {
+                height: 50px;
+                margin-top: $bottom_margin_top;
+                width: calc(100% - #{235px});
+                margin-left: 40px;
+                display: table-cell;
+                vertical-align: middle;
+                padding-left: 10px;
+                position: relative;
+                border: none;
+              }
+                              // }
+                i.fa.fa-file-image-o {
+                  color: black;
+                  background-color: white;
+                  width: 25px;
+                  margin-top: $bottom_margin_top;
+                  padding-top: 19px;
+                  padding-bottom: calc(50px - 19px - 20px);
+                  font-size: 20px;
+                  position: absolute;
+                  border: none
                 }
-                &___sendbutton {
-                  float  : right;
-     
-                   }
-             }
-           }
+          
+
+                  &__send {
+                    background-color: #38AEF0;
+                    width: 100px;
+                    height: 50px;
+                    color: white;
+                    right: 0;
+                    margin-top: $bottom_margin_top;
+                    margin-left: 15px;
+   
+                    margin-right: $right-bar-padding;
+                    position: absolute;
+                    border: none;
+
+                  }
+                }
+              }
           }
+        }
       }
     }
   }

@@ -33,16 +33,29 @@
           %p.right-messages__top--member
             Member: Daisuke Uchida
           %p.right-messages__top--groupname
-            sample group
-          %p.right-messages__top--member
-            Member: Daisuke Uchida
 
         %div.right-messages__middle
-          messages middle
-          %div.right-messages__middle--bottom
-            messages bottom
-            %p.right-messages__middle--bottom___typearea
-              type a message
-            %div.right-messages__middle--bottom___sendbutton
-              Send
+          %p.right-messages__middle--user
+            daisuke uchida
+          %p.right-messages__middle--date_n_time
+            %a
+              17/09/09 15:59:10
+          %p.right-messages__middle--message
+            Hello world
+
+
+
+
+        %div.right-messages__middle--bottom
+          %div.right-messages__middle--bottom___message_area
+            %input{ class: "right-messages__middle--bottom___message_area__text", name: "message", size: "40", placeholder: "type a message"}
+              = link_to messages_path do
+                %i.fa.fa-file-image-o
+
+            %input{ class: "right-messages__middle--bottom___message_area__send", type: "submit", value: "Send"}
+
+
+
+
+
 
