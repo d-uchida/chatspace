@@ -1,21 +1,8 @@
 
-$top-bar-height          : 25px;
-$leftbar-width           : 300px;
-$left-bar-top__height    : 100px;
-$letter-white            : #FFFFFF;
-$background-white        : #AAAAAA;
-$skyblue                 : #38AEF0;
-$black                   : #999999;
-$left-bar__bottom-color  : #2f3e51;
-$left-bar-padding        : 20px;
-$right-bar-padding       : 40px;
-$contents-padding-top    : 35px;
-
 html {
   height: 100%;
 
   body {
-
     height: 100%;
 
 
@@ -40,14 +27,14 @@ html {
             height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
             background-color  : #253141;
             color             : $letter-white;
-            width: $leftbar-width;
-            font-size: 16px;
-            font-weight: bold;
-            padding-top: $contents-padding-top;
+            width             : $leftbar-width;
+            font-size         : 16px;
+            font-weight       : bold;
+            padding-top       : $contents-padding-top;
 
               &--title {
-                margin: 0 $left-bar-padding;
-                float: left;
+                margin  : 0 $left-bar-padding;
+                float   : left;
               }
               i.fa.fa-pencil-square-o {
                 color        : $letter-white;
@@ -69,130 +56,120 @@ html {
             color             : $letter-white;
             height            : calc(100% - #{$left-bar-top__height});
             &--group_name {
-              padding-top: 20px;
-              padding-left:$left-bar-padding;
+              padding-top   : 20px;
+              padding-left  :$left-bar-padding;
               }
             &--latest_message {
-              padding-left:$left-bar-padding;
-              padding-bottom: 20px;
+              padding-left    :$left-bar-padding;
+              padding-bottom  : 20px;
                 }
-            
           }
 
       }
 
 
       .right-messages {
-        width             : calc(100% - $leftbar-width);
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
-
-$upper-righ-margin-bottom: 6px;
           &__top {
             height : $left-bar-top__height;
             margin-bottom     : $upper-righ-margin-bottom;
              &--edit_button {
-               float:right;
-               margin-top: 28px;
-               margin-right: 40px;
-               height: 40px;
-               padding-left: 20px;
-               padding-right: 20px;
-               font-size: 17px;
-               color: #38AEF0;
-               border: 1px solid #38AEF0;
-               background-color: white;
+               float             :right;
+               margin-top        : 28px;
+               margin-right      : 40px;
+               height            : 40px;
+               padding-left      : 20px;
+               padding-right     : 20px;
+               font-size         : 17px;
+               color             : #38AEF0;
+               border            : 1px solid #38AEF0;
+               background-color  : white;
 
               }
 
               &--groupname {
-                font-size: 20px;
-                padding-left: $right-bar-padding;
-                padding-top: $contents-padding-top;
-                color: #333333;
+                font-size     : 20px;
+                padding-left  : $right-bar-padding;
+                padding-top   : $contents-padding-top;
+                color         : #333333;
               }
               &--member {
-                padding-left: $right-bar-padding;
-                font-size: 12px;
-                color: #999999;
-                padding-top: 15px;
+                padding-left  : $right-bar-padding;
+                font-size     : 12px;
+                color         : #999999;
+                padding-top   : 15px;
               }
-
-
           }
 
           &__middle {
-            height            : calc(100% - #{$left-bar-top__height} - 100px - #{$upper-righ-margin-bottom});
-            padding-left: $right-bar-padding;
+            height        : calc(100% - #{$left-bar-top__height} - 100px - #{$upper-righ-margin-bottom});
+            padding-left  : $right-bar-padding;
 
-$user_comment_margin-top: 40px;
 
             &--user {
-              padding-top: $user_comment_margin-top;
-              font: 16px;
-              font-weight: bold;
-              color: #454A54;
-              width: 100%;
+              padding-top  : $user_comment_margin-top;
+              font         : 16px;
+              font-weight  : bold;
+              color        : #454A54;
+              width        : 100%;
             }
             &--user:after {
-              content: "17/09/11 15:59:10";
-              font-size: 12px;
-              color: #999999;
-              margin-left: 10px;
+              content      : "17/09/11 15:59:10";
+              font-size    : 12px;
+              color        : #999999;
+              margin-left  : 10px;
 
             }
 
             &--message {
-              font-size: 14px;
+              font-size  : 14px;
             }
 
-$bottom_margin_top: 20px;
-$bottom_margin_height: 90px;
+
 
           &--bottom {
-            bottom: 0;
-            height: $bottom_margin_height;
-            background-color: #DDDDDD;
-            margin-top: 10px;
+            bottom            : 0;
+            height            : $bottom_margin_height;
+            background-color  : #DDDDDD;
+            margin-top        : 10px;
 
             &___message_area {
               &__text {
-                height: 50px;
-                margin-top: $bottom_margin_top;
-                width: calc(100% - #{235px});
-                margin-left: 40px;
-                display: table-cell;
-                vertical-align: middle;
-                padding-left: 10px;
-                position: relative;
-                border: none;
+                height          : 50px;
+                margin-top      : $bottom_margin_top;
+                width           : calc(100% - #{235px});
+                margin-left     : 40px;
+                display         : table-cell;
+                vertical-align  : middle;
+                padding-left    : 10px;
+                position        : relative;
+                border          : none;
               }
                               // }
                 i.fa.fa-file-image-o {
-                  color: black;
-                  background-color: white;
-                  width: 25px;
-                  margin-top: $bottom_margin_top;
-                  padding-top: 19px;
-                  padding-bottom: calc(50px - 19px - 20px);
-                  font-size: 20px;
-                  position: absolute;
-                  border: none
+                  color             : black;
+                  background-color  : white;
+                  width             : 25px;
+                  margin-top        : $bottom_margin_top;
+                  padding-top       : 19px;
+                  padding-bottom    : calc(50px - 19px - 20px);
+                  font-size         : 20px;
+                  position          : absolute;
+                  border            : none
                 }
-          
-
                   &__send {
                     background-color: #38AEF0;
-                    width: 100px;
-                    height: 50px;
-                    color: white;
-                    right: 0;
-                    margin-top: $bottom_margin_top;
-                    margin-left: 15px;
+                    width         : 100px;
+                    height        : 50px;
+                    color         : white;
+                    right         : 0;
+                    margin-top    : $bottom_margin_top;
+                    margin-left   : 15px;
    
-                    margin-right: $right-bar-padding;
-                    position: absolute;
-                    border: none;
+                    margin-right  : $right-bar-padding;
+                    position      : absolute;
+                    border        : none;
 
                   }
                 }
