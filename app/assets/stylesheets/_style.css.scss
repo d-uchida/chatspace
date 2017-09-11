@@ -28,8 +28,6 @@ html {
         color             : $letter-white;
         text-align        : center;
         font-size         : 13px;
-
-
       }
 
       .left-bar {
@@ -89,8 +87,10 @@ html {
         height            : calc(100% - #{$top-bar-height});
         margin-left       : $leftbar-width;
 
+$upper-righ-margin-bottom: 6px;
           &__top {
             height : $left-bar-top__height;
+            margin-bottom     : $upper-righ-margin-bottom;
              &--edit_button {
                float:right;
                margin-top: 28px;
@@ -102,6 +102,7 @@ html {
                color: #38AEF0;
                border: 1px solid #38AEF0;
                background-color: white;
+
               }
 
               &--groupname {
@@ -121,15 +122,26 @@ html {
           }
 
           &__middle {
-            height            : calc(100% - #{$left-bar-top__height} - 100px);
+            height            : calc(100% - #{$left-bar-top__height} - 100px - #{$upper-righ-margin-bottom});
             padding-left: $right-bar-padding;
 
+$user_comment_margin-top: 40px;
+
             &--user {
-              font-size: 16px;
+              padding-top: $user_comment_margin-top;
+              font: 16px;
+              font-weight: bold;
+              color: #454A54;
+              width: 100%;
             }
-            &--date_n_time {
-              font-size: 12px
+            &--user:after {
+              content: "17/09/11 15:59:10";
+              font-size: 12px;
+              color: #999999;
+              margin-left: 10px;
+
             }
+
             &--message {
               font-size: 14px;
             }
