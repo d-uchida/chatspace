@@ -91,6 +91,18 @@ html {
 
           &__top {
             height : $left-bar-top__height;
+             &--edit_button {
+               float:right;
+               margin-top: 28px;
+               margin-right: 40px;
+               height: 40px;
+               padding-left: 20px;
+               padding-right: 20px;
+               font-size: 17px;
+               color: #38AEF0;
+               border: 1px solid #38AEF0;
+               background-color: white;
+              }
 
               &--groupname {
                 font-size: 20px;
@@ -103,10 +115,11 @@ html {
                 font-size: 12px;
                 color: #999999;
                 padding-top: 15px;
-
               }
 
+
           }
+
           &__middle {
             height            : calc(100% - #{$left-bar-top__height} - 100px);
             padding-left: $right-bar-padding;
