@@ -14,12 +14,11 @@ html {
         }
         .left-bar {
           width             : $leftbar-width;
-          background-color  : orange;
           float             : left;
           height            : calc(100% - #{$top-bar-height});
           &__top {
-            height            : calc(#{$left-bar-top__height} - #{$contents-padding-top}) ;
-            background-color  : #253141;
+            height            : calc(#{$left-bar-top__height} - #{$contents-padding-top});
+            background-color  : $navy;
             color             : $letter-white;
             width             : $leftbar-width;
             font-size         : 16px;
@@ -31,12 +30,12 @@ html {
             }
             i.fa.fa-pencil-square-o {
               color        : $letter-white;
-              font-size    : 20px;
+              font-size    : $font_awesome_size ;
               float        : right;
             }
             i.fa.fa-cog {
               color        : $letter-white;
-              font-size    : 20px;
+              font-size    : $font_awesome_size ;
               float        : right;
               margin-right : $left-bar-padding;
               margin-left  : 10px;
@@ -67,11 +66,11 @@ html {
             margin-top        : 28px;
             margin-right      : 40px;
             height            : 40px;
-            padding-left      : 20px;
-            padding-right     : 20px;
+            padding-left      : $edit_button_padding;
+            padding-right     : $edit_button_padding;
             font-size         : 17px;
-            color             : #38AEF0;
-            border            : 1px solid #38AEF0;
+            color             : $skyblue;
+            border            : 1px solid $skyblue;
             background-color  : white;
           }
           &--groupname {
@@ -83,7 +82,7 @@ html {
           &--member {
             padding-left  : $right-bar-padding;
             font-size     : 12px;
-            color         : #999999;
+            color         : $black;
             padding-top   : 15px;
           }
         }
@@ -94,13 +93,14 @@ html {
             padding-top  : $user_comment_margin-top;
             font         : 16px;
             font-weight  : bold;
-            color        : #454A54;
+            color        : $week_gray;
+
             width        : 100%;
           }
           &--user:after {
             content      : "17/09/11 15:59:10";
             font-size    : 12px;
-            color        : #999999;
+            color        : $black;
             margin-left  : 10px;
           }
           &--message {
@@ -108,23 +108,18 @@ html {
           }
         }
         &__bottom {
-          // bottom            : 0;
           height            : $bottom_margin_height;
-          background-color  : #DDDDDD;
-          // margin-top        : 10px;
-          // padding-bottom: 10px;
+          background-color  : $bottom-gray;
           &---message_area {
-
             &__text {
-              height          : 50px;
+              height          : $message_box_height;
               margin-top      : $bottom_margin_top;
               width           : calc(100% - #{235px});
               margin-left     : 40px;
               display         : table-cell;
               padding-left    : 10px;
               border          : none;
-              margin-right: -5px;
-
+              margin-right    : -5px;
             }
               i.fa.fa-file-image-o {
                 color             : black;
@@ -133,12 +128,12 @@ html {
                 padding-top: 14px;
                 padding-bottom: 16px;
                 padding-left: 5px;
-                font-size         : 20px;
+                font-size         :$font_awesome_size ;
             }
             &__send {
-              background-color: #38AEF0;
+              background-color: $skyblue;
               width         : 100px;
-              height        : 50px;
+              height        : $message_box_height ;
               color         : white;
               right         : 0;
               margin-top    : $bottom_margin_top;
