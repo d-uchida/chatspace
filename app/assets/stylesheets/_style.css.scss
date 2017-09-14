@@ -5,17 +5,18 @@ html {
     height: 100%;
     .contents {
       height     : 100%;
-        .top-bar {
-          background-color  : $skyblue;
-          height            : $top-bar-height;
-          color             : $letter-white;
-          text-align        : center;
-          font-size         : 13px;
-        }
+        // .top-bar {
+        //   background-color  : $skyblue;
+        //   height            : $top-bar-height;
+        //   color             : $letter-white;
+        //   text-align        : center;
+        //   font-size         : 13px;
+        // }
         .left-bar {
           width             : $leftbar-width;
           float             : left;
-          height            : calc(100% - #{$top-bar-height});
+          height            : 100%;
+          // height            : calc(100% - #{$top-bar-height});
           &__top {
             height            : calc(#{$left-bar-top__height} - #{$contents-padding-top});
             background-color  : $navy;
@@ -87,7 +88,8 @@ html {
           }
         }
         &__middle {
-          height        : calc(100% - #{$left-bar-top__height} - 96px);
+          // height        : calc(100% - #{$left-bar-top__height} - 96px);
+          height        : calc(100% - #{$left-bar-top__height} - 71px);
           padding-left  : $right-bar-padding;
           &--user {
             padding-top  : $user_comment_margin-top;
