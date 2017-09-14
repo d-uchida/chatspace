@@ -1,14 +1,22 @@
 class UsersController < ApplicationController
 
   def edit
+    @user = User.find(params[:id])
+    # @user = User.new
   end
 
   def update
-  	current_user.update(user_params)
+    @user = User.find(params[:id])
+    if current_user.update(user_params)
+       redirect_to messages_path
+     else
+       render "edit"
+     end
   end
 
   private
   def user_params
   	params.require(:user).permit(:name, :email)
+  end
 
 end

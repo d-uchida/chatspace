@@ -8,9 +8,9 @@
         %div.left-bar__top
           %h1.left-bar__top--title
             Daisuke Uchiuda
-          = link_to edit_user_registration_path do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
-          = link_to edit_user_registration_path do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-pencil-square-o
         %div.left-bar__main
           %p.left-bar__main--group_name
