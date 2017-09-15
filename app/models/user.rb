@@ -3,4 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true, length: { minimum: 3 }
   validates :email, presence: true
+  has_many :messages
+  has_many :groups, through: :user_groups
+  has_many :user_groups
 end
