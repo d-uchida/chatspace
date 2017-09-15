@@ -7,10 +7,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if current_user.update(user_params)
-       redirect_to messages_path
-     else
+       redirect_to messages_path, notice: "ユーザー情報を編集しました。"
+      else
+       flash.now[:alert] = "ユーザー情報を正しく入力してください"
        render "edit"
-     end
+    end
   end
   
   private
