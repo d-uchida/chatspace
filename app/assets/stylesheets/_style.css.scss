@@ -5,42 +5,35 @@ html {
     height: 100%;
     .contents {
       height     : 100%;
-        .top-bar {
-          background-color  : $skyblue;
-          height            : $top-bar-height;
+      .left-bar {
+        width             : $leftbar-width;
+        float             : left;
+        height            : 100%;
+        &__top {
+          height            : calc(#{$left-bar-top__height} - #{$contents-padding-top});
+          background-color  : $navy;
           color             : $letter-white;
-          text-align        : center;
-          font-size         : 13px;
-        }
-        .left-bar {
           width             : $leftbar-width;
-          float             : left;
-          height            : calc(100% - #{$top-bar-height});
-          &__top {
-            height            : calc(#{$left-bar-top__height} - #{$contents-padding-top});
-            background-color  : $navy;
-            color             : $letter-white;
-            width             : $leftbar-width;
-            font-size         : 16px;
-            font-weight       : bold;
-            padding-top       : $contents-padding-top;
-            &--title {
-              margin  : 0 $left-bar-padding;
-              float   : left;
+          font-size         : 16px;
+          font-weight       : bold;
+          padding-top       : $contents-padding-top;
+          &--title {
+            margin  : 0 $left-bar-padding;
+            float   : left;
+          }
+          i.fa.fa-pencil-square-o {
+            color        : $letter-white;
+            font-size    : $font_awesome_size ;
+            float        : right;
+          }
+          i.fa.fa-cog {
+            color        : $letter-white;
+            font-size    : $font_awesome_size ;
+            float        : right;
+            margin-right : $left-bar-padding;
+            margin-left  : 10px;
             }
-            i.fa.fa-pencil-square-o {
-              color        : $letter-white;
-              font-size    : $font_awesome_size ;
-              float        : right;
-            }
-            i.fa.fa-cog {
-              color        : $letter-white;
-              font-size    : $font_awesome_size ;
-              float        : right;
-              margin-right : $left-bar-padding;
-              margin-left  : 10px;
-              }
-            }
+          }
           &__main {
             background-color  : $left-bar__bottom-color;
             color             : $letter-white;
@@ -87,14 +80,13 @@ html {
           }
         }
         &__middle {
-          height        : calc(100% - #{$left-bar-top__height} - 96px);
+          height        : calc(100% - #{$left-bar-top__height} - 71px);
           padding-left  : $right-bar-padding;
           &--user {
             padding-top  : $user_comment_margin-top;
             font         : 16px;
             font-weight  : bold;
             color        : $week_gray;
-
             width        : 100%;
           }
           &--user:after {
