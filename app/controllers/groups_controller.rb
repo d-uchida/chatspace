@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-def messages
-end
+  def create
+  end
 
 end
