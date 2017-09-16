@@ -8,7 +8,7 @@
             Daisuke Uchiuda
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
-          = link_to new_group_path(current_user) do
+          = link_to new_group_path do
             %i.fa.fa-pencil-square-o
         %div.left-bar__main
           %p.left-bar__main--group_name
@@ -21,7 +21,7 @@
           %button.right-messages__top--edit_button
             Edit
           %p.right-messages__top--groupname
-            sample group
+            = @group.name
           %p.right-messages__top--member
             Member: Daisuke Uchida
         %div.right-messages__middle
