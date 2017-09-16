@@ -4,7 +4,8 @@
   - if @group.errors.messages[:name].any?
     %ul.chat-group-form_errors
       %li
-        %span 1件のエラーが発生しました。
+        = @group.errors.messages.length
+        件のエラーが発生しました。
       %li
         %div グループ名を入力してください。
 
