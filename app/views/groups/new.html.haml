@@ -6,15 +6,12 @@
     /     1件のエラーが発生しました。
     /     %ul
     /       %li エラーです
+  = form_for(@group) do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         %label.chat-group-form__label{:for => "chat_group_name"} グループ名
       .chat-group-form__field--right
-        %input#chat_group_name.chat-group-form__input{:name => "chat_group[name]", :placeholder => "グループ名を入力してください", :type => "text"}/
-    .chat-group-form__field.clearfix
-      %div.check_box
-
-
+        = f.text_field :name, placeholder: "グループ名を入力してください"
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       
       .chat-group-form__field--left
@@ -23,9 +20,8 @@
 
       .chat-group-form__field--right
         .chat-group-form__field--right___check_box
-          = form_for @group do |f|
-            = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-              = b.label{b.check_box + b.text}
+          = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
+            = b.label { b.check_box + b.text }
 
         / %div{ class: 'chat-group-form__search clearfix' }
         / %input{ class: 'chat-group-form__input', id: 'user-search-field', placeholder:'追加したいユーザー名を入力してください', type: 'text' }
@@ -50,4 +46,6 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "登録する"}/
+        .chat-group-form__action-btn
+          = f.submit(value: "登録する")
+
