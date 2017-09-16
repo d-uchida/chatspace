@@ -65,7 +65,10 @@
         height:$common-height;
         float: right;
         width: 70%;
-        &___input_form {
+        &___input_form__group_name {
+          input {
+          width: 300px;
+          }
         }
         &__action-btn {
           input {

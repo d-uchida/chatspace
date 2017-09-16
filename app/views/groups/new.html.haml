@@ -13,7 +13,7 @@
       .chat-group-form__field--left
         グループ名
       .chat-group-form__field--right
-        .chat-group-form__field--right___input_form
+        .chat-group-form__field--right___input_form__group_name
           = f.text_field :name, placeholder: "グループ名を入力してください"
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       
@@ -29,14 +29,13 @@
         / %input{ class: 'chat-group-form__input', id: 'user-search-field', placeholder:'追加したいユーザー名を入力してください', type: 'text' }
         / %div{ id: 'user-search-result' }
 
-      .chat-group-form__field--left
-        チャットメンバー
+        / .chat-group-form__field--left
+        /   チャットメンバーを追加
 
 
-
-      .chat-group-form__field--right
-        .chat-group-form__field--right___input_form
-          仮置きボックス
+        / .chat-group-form__field--right
+        /   .chat-group-form__field--right___input_form
+        /     仮置きボックス
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
         / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
         /
