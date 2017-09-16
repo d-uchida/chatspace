@@ -9,8 +9,12 @@ class GroupsController < ApplicationController
   def create
   	# render plain: params[@group].inspect
   	@group = Group.new(group_params)
-  	@group.save
-  	redirect_to messages_path
+    if @group.save
+  	  redirect_to messages_path
+    else
+      # render plain: @group.errors.inspect
+      render "new"
+    end
   end
 
   def edit

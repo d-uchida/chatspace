@@ -6,6 +6,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
+
   h1 {
     letter-spacing: 2px;
     font-size: 24px;
@@ -18,6 +19,7 @@
     border: 1px solid #ddd;
     border-radius: 2px;
     text-align: center;
+
   h2 {
       margin-bottom: 10px;
       color: #f05050;
@@ -35,6 +37,11 @@
       padding: 0;
       font-size: 13px;
     }
+   li:first-child {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 15px;
+   }
   }
   &__field {
     margin-top: 30px;
@@ -43,16 +50,23 @@
       clear: both;
       display: block;
     }
+    $common-height: 70px;
       &--left {
+        text-align: right;
+        font-weight: bold;
         float: left;
         width: 30%;
         padding-right: 20px;
         padding-left: 20px;
         box-sizing: border-box;
+        height:$common-height;
       }
       &--right {
+        height:$common-height;
         float: right;
         width: 70%;
+        &___input_form {
+        }
         &__action-btn {
           input {
             margin-top: 30px;
@@ -77,36 +91,36 @@
     box-sizing: border-box;
   }
 }
-.chat-group-action-btn {
-  padding: 0 15px;
-  line-height: 50px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  &__name {
-      float: left;
-  }
-  &__btn {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    &--add {
-      color: #38aef0;
-    }
-    &--remove {
-      color: #f05050;
-    }
-  }
-}
-  &__action-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: #fff;
-    background-color: #38aef0;
-    border: 0;
-  }
+// .chat-group-action-btn {
+//   padding: 0 15px;
+//   line-height: 50px;
+//   font-size: 14px;
+//   border-bottom: 1px solid #ddd;
+//   &:after {
+//     content: "";
+//     clear: both;
+//     display: block;
+//   }
+//   &__name {
+//       float: left;
+//   }
+//   &__btn {
+//     float: right;
+//     display: inline-block;
+//     cursor: pointer;
+//     &--add {
+//       color: #38aef0;
+//     }
+//     &--remove {
+//       color: #f05050;
+//     }
+//   }
+// }
+  // &__action-btn {
+  //   display: inline-block;
+  //   padding: 12px 20px;
+  //   color: #fff;
+  //   background-color: #38aef0;
+  //   border: 0;
+  // }
 }
