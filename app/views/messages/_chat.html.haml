@@ -11,11 +11,11 @@
           = link_to new_group_path do
             %i.fa.fa-pencil-square-o
         %div.left-bar__main
-          %p.left-bar__main--group_name
-            group name 1
-          %p.left-bar__main--latest_message
-            messageはありません。
-          %p.left-bar__main--group_name
+          .left-bar__main--group_name
+            - @groups.each do |group|
+              = simple_format(group.name) 
+              .left-bar__main--group_name--latest_message
+                まだメッセージはありません
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
