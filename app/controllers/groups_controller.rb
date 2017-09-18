@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+
+  before_action :find_id, only: [:edit, :update]
+
   def index
     @groups = current_user.groups
   end
@@ -17,11 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-     @group = Group.find(params[:id])
      if @group.update(group_params)
        redirect_to group_messages_path(@group)
      else
@@ -32,4 +33,10 @@ class GroupsController < ApplicationController
   def group_params
   	params.require(:group).permit(:name, {user_ids: []})
   end
+
+  def find_id
+    @group = Group.find(params[:id])
+  end
+
+
 end
