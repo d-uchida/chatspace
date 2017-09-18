@@ -1,1 +1,39 @@
-= render "chat"
+%html
+  %body
+    %div.contents
+      %div.left-bar
+        %div.left-bar__top
+          %h1.left-bar__top--title
+            = current_user.name
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o
+        %div.left-bar__main
+          .left-bar__main--group_name
+            - @groups.each do |group|
+              = simple_format(group.name)
+              .left-bar__main--group_name--latest_message
+                まだメッセージはありません
+      %div.right-messages
+        %div.right-messages__top
+          %button.right-messages__top--edit_button
+            = link_to "Edit", edit_group_path(current_user)
+
+          %p.right-messages__top--groupname
+            = @group.name
+          %p.right-messages__top--member
+            Member: Daisuke Uchida
+        %div.right-messages__middle
+          %div.right-messages__middle--user
+            daisuke uchida
+          %div.right-messages__middle--message
+            Hello world
+        %div.right-messages__bottom
+          %div.right-messages__bottom---message_area
+            %input{ class: "right-messages__bottom---message_area__text", name: "message", size: "40", placeholder: "type a message"}
+              = link_to messages_path do
+                %i.fa.fa-file-image-o
+            %input{ class: "right-messages__bottom---message_area__send", type: "submit", value: "Send"}
+
+            
