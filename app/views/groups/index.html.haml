@@ -1,11 +1,10 @@
-
 %html
   %body
     %div.contents
       %div.left-bar
         %div.left-bar__top
           %h1.left-bar__top--title
-            Daisuke Uchiuda
+            = current_user.name
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
           = link_to new_group_path do
@@ -19,8 +18,6 @@
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
-            Edit
+            = link_to "Edit", edit_group_path(current_user)
 
         %div.right-messages__middle
-
-

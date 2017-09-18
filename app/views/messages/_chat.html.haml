@@ -1,4 +1,3 @@
-
 %html
   %body
     %div.contents
@@ -19,19 +18,4 @@
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
-            Edit
-          %p.right-messages__top--groupname
-            = @group.name
-          %p.right-messages__top--member
-            Member: Daisuke Uchida
-        %div.right-messages__middle
-          %div.right-messages__middle--user
-            daisuke uchida
-          %div.right-messages__middle--message
-            Hello world
-        %div.right-messages__bottom
-          %div.right-messages__bottom---message_area
-            %input{ class: "right-messages__bottom---message_area__text", name: "message", size: "40", placeholder: "type a message"}
-              = link_to messages_path do
-                %i.fa.fa-file-image-o
-            %input{ class: "right-messages__bottom---message_area__send", type: "submit", value: "Send"}
+            = link_to "Edit", edit_group_path(current_user)
