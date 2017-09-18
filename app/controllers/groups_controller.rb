@@ -1,8 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    binding.pry
-    @group = Group.find(params[:group_id])
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def new
