@@ -4,4 +4,17 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @groups = current_user.groups
   end
+
+  def new
+  	@message = Message.new
+  end
+
+  def create
+  	Message.create(params[:table])
+  end
+
+def table_params
+end
+
+
 end
