@@ -5,7 +5,7 @@
       %div.left-bar
         %div.left-bar__top
           %h1.left-bar__top--title
-            Daisuke Uchiuda
+            = current_user.name
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
           = link_to new_group_path do
@@ -13,7 +13,7 @@
         %div.left-bar__main
           .left-bar__main--group_name
             - @groups.each do |group|
-              = simple_format(group.name) 
+              = simple_format(group.name)
               .left-bar__main--group_name--latest_message
                 まだメッセージはありません
       %div.right-messages
