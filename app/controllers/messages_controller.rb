@@ -6,14 +6,14 @@ class MessagesController < ApplicationController
   end
 
   def new
-  	@message = Message.new
+    @message = Message.new
   end
 
   def create
-  	Message.create(params[:table])
+    Message.create(params[:table])
   end
 
-def table_params
+def message_params
 end
 
 
