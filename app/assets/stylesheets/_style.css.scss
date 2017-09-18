@@ -17,6 +17,7 @@ html {
           font-size         : 16px;
           font-weight       : bold;
           padding-top       : $contents-padding-top;
+
           &--title {
             margin  : 0 $left-bar-padding;
             float   : left;
@@ -40,11 +41,12 @@ html {
             height            : calc(100% - #{$left-bar-top__height});
             &--group_name {
               padding-top   : 20px;
-              padding-left  :$left-bar-padding;
-            }
-            &--latest_message {
-              padding-left    :$left-bar-padding;
-              padding-bottom  : 20px;
+              padding-left  : $left-bar-padding ;
+            
+              &--latest_message {
+                padding-bottom  : 40px;
+                font-size: 11px;
+              }
             }
           }
         }
