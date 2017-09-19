@@ -1,0 +1,7 @@
+- @group_messages.each do |message|
+  %div.right-messages__middle
+    %div.right-messages__middle--user
+      = message.user.name
+      = message.created_at
+    %div.right-messages__middle--message
+      = message.text

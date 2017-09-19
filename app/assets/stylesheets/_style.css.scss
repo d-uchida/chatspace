@@ -81,8 +81,9 @@ html {
           }
         }
         &__middle {
-          height        : calc(100% - #{$left-bar-top__height} - 71px);
+          // height        : calc(100% - #{$left-bar-top__height} - 71px);
           padding-left  : $right-bar-padding;
+          overflow: scroll;
           &--user {
             padding-top  : $user_comment_margin-top;
             font         : 16px;
@@ -90,12 +91,7 @@ html {
             color        : $week_gray;
             width        : 100%;
           }
-          &--user:after {
-            content      : "17/09/11 15:59:10";
-            font-size    : 12px;
-            color        : $black;
-            margin-left  : 10px;
-          }
+
           &--message {
             font-size  : 14px;
           }

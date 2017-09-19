@@ -22,16 +22,13 @@
             = link_to "Edit", edit_group_path(current_user)
 
           %p.right-messages__top--groupname
-            / = @group.name
+            group.name
           %p.right-messages__top--member
+
             Member:Daisuke Uchida
-        %div.right-messages__middle
-          - if @messages
-            - @messages.each do |message|
-              %div.right-messages__middle--user
-                - link_to message.current_user.group
-              %div.right-messages__middle--message
-                = message.text
+
+        = render partial: "message", locals: { message: @message}
+
         %div.right-messages__bottom
           %div.right-messages__bottom---message_area
             = form_for [@group, @message] do |f|
