@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @groups = current_user.groups
+    @group = Group.find(params[:group_id])
   end
 
   def new
@@ -14,13 +15,17 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(text: params[:text], image: params[:image], group_id: params[:group_id], user_id: current_user.id)
-    redirect_to group_messages_path(:group_id)
+    @message = Message.new(message_params)
+    @message.save
+    redirect_to group_messages_path
+
+    # Message.create(text: params[:text], image: params[:image], group_id: params[:group_id], user_id: current_user.id)
+    # redirect_to group_messages_path(:group_id),method: :post
   end
 
   private
   def message_params
-    params.permit(:text, :image, :group_id)
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
   end
 
 end

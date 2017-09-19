@@ -24,7 +24,7 @@
           %p.right-messages__top--groupname
             / = @group.name
           %p.right-messages__top--member
-            Member: Daisuke Uchida
+            Member:Daisuke Uchida
         %div.right-messages__middle
           - if @messages
             - @messages.each do |message|
@@ -34,7 +34,7 @@
                 = message.text
         %div.right-messages__bottom
           %div.right-messages__bottom---message_area
-            = form_for @message do |f|
+            = form_for [@group, @message] do |f|
               = f.text_field :text, class: "right-messages__bottom---message_area__text", size: 40, placeholder: "type a message"
               = link_to messages_path do
                 %i.fa.fa-file-image-o
