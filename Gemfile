@@ -18,6 +18,8 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
