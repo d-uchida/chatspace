@@ -22,11 +22,10 @@
             = link_to "Edit", edit_group_path(current_user)
 
           %p.right-messages__top--groupname
-            group.name
+            = @group.name
           %p.right-messages__top--member
-
-            Member:Daisuke Uchida
-
+            Member:
+            = @group.users.pluck(:name).join(", ");
         = render partial: "message", locals: { message: @message}
 
         %div.right-messages__bottom
