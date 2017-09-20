@@ -26,7 +26,8 @@
           %p.right-messages__top--member
             Member:
             = @group.users.pluck(:name).join(", ");
-        = render partial: "message", locals: { message: @message}
+        .right-messages__middle
+          = render partial: "message", locals: { message: @message}
 
         %div.right-messages__bottom
           %div.right-messages__bottom---message_area

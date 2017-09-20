@@ -5,6 +5,7 @@ html {
     height: 100%;
     .contents {
       height     : 100%;
+      position: relative;
       .left-bar {
         width             : $leftbar-width;
         float             : left;
@@ -17,7 +18,6 @@ html {
           font-size         : 16px;
           font-weight       : bold;
           padding-top       : $contents-padding-top;
-
           &--title {
             margin  : 0 $left-bar-padding;
             float   : left;
@@ -50,11 +50,16 @@ html {
           }
         }
       .right-messages {
-        height            : calc(100% - #{$top-bar-height});
+        height            : calc(100% - #{$top-bar-height} - #{$message_box_height} );
         margin-left       : $leftbar-width;
+        z-index: 2;
+        overflow: scroll;
         &__top {
           height : $left-bar-top__height;
           margin-bottom     : $upper-righ-margin-bottom;
+          position: fixed;
+          width: 70%;
+          background-color: $letter-white;
           &--edit_button {
             float             :right;
             margin-top        : 28px;
@@ -81,24 +86,36 @@ html {
           }
         }
         &__middle {
-          // height        : calc(100% - #{$left-bar-top__height} - 71px);
-          padding-left  : $right-bar-padding;
-          overflow: scroll;
+          margin-left  : $right-bar-padding;
+          margin-bottom  : 10px;
+          margin-top: $left-bar-top__height;
+
           &--user {
             padding-top  : $user_comment_margin-top;
-            font         : 16px;
             font-weight  : bold;
             color        : $week_gray;
             width        : 100%;
+            &__list{
+              font         : 16px;
+              span {
+                color         : $black;
+                font-size     : 12px;
+                padding-left  : $margin-btw-sender-and-message;
+              }
           }
-
           &--message {
             font-size  : 14px;
+            padding-top: $margin-btw-sender-and-message;
           }
         }
+      }
         &__bottom {
           height            : $bottom_margin_height;
           background-color  : $bottom-gray;
+          position: absolute;
+          bottom:0;
+          right:0;
+          width:calc(100% - #{$leftbar-width});
           &---message_area {
             &__text {
               height          : $message_box_height;
@@ -114,15 +131,15 @@ html {
                 color             : black;
                 background-color  : white;
                 width             : 25px;
-                padding-top: 14px;
-                padding-bottom: 16px;
-                padding-left: 5px;
-                font-size         :$font_awesome_size ;
+                padding-top       : 14px;
+                padding-bottom    : 16px;
+                padding-left      : 5px;
+                font-size         : $font_awesome_size;
             }
             &__send {
               background-color: $skyblue;
               width         : 100px;
-              height        : $message_box_height ;
+              height        : $message_box_height;
               color         : white;
               right         : 0;
               margin-top    : $bottom_margin_top;

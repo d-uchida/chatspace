@@ -1,7 +1,8 @@
 - @group.messages.each do |group_message|
-  %div.right-messages__middle
-    %div.right-messages__middle--user
+  .right-messages__middle--user
+    .right-messages__middle--user__list
       = group_message.user.name
-      = group_message.created_at
-    %div.right-messages__middle--message
+      %span
+        = group_message.created_at
+    .right-messages__middle--message
       = group_message.text
