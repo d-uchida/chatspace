@@ -37,11 +37,11 @@ html {
           }
           &__main {
             background-color  : $left-bar__bottom-color;
-            color             : $letter-white;
             height            : calc(100% - #{$left-bar-top__height});
             &--group_name {
               padding-top   : 20px;
               padding-left  : $left-bar-padding ;
+              color: $letter-white;
               &--latest_message {
                 padding-bottom  : 40px;
                 font-size: 11px;
