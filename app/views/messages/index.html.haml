@@ -15,7 +15,11 @@
               .left-bar__main--group_name
                 = simple_format(group.name)
                 .left-bar__main--group_name--latest_message
-                  まだメッセージはありません
+                  - if group.messages.exists?
+                    = group.messages.pluck(:text).last
+                  - else
+                    まだメッセージはありません
+
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
