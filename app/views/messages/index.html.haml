@@ -10,11 +10,16 @@
           = link_to new_group_path do
             %i.fa.fa-pencil-square-o
         %div.left-bar__main
-          .left-bar__main--group_name
-            - @groups.each do |group|
-              = simple_format(group.name)
-              .left-bar__main--group_name--latest_message
-                まだメッセージはありません
+          - @groups.each do |group|
+            = link_to group_messages_path(group.id) do
+              .left-bar__main--group_name
+                = simple_format(group.name)
+                .left-bar__main--group_name--latest_message
+                  - if group.messages.exists?
+                    = group.messages.pluck(:text).last
+                  - else
+                    まだメッセージはありません
+
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
@@ -23,17 +28,16 @@
           %p.right-messages__top--groupname
             = @group.name
           %p.right-messages__top--member
-            Member: Daisuke Uchida
-        %div.right-messages__middle
-          %div.right-messages__middle--user
-            daisuke uchida
-          %div.right-messages__middle--message
-            Hello world
+            Member:
+            = @group.users.pluck(:name).join(", ");
+        .right-messages__middle
+          = render partial: "message", locals: { message: @message}
+
         %div.right-messages__bottom
           %div.right-messages__bottom---message_area
-            %input{ class: "right-messages__bottom---message_area__text", name: "message", size: "40", placeholder: "type a message"}
+            = form_for [@group, @message] do |f|
+              = f.text_field :text, class: "right-messages__bottom---message_area__text", size: 40, placeholder: "type a message"
               = link_to messages_path do
                 %i.fa.fa-file-image-o
-            %input{ class: "right-messages__bottom---message_area__send", type: "submit", value: "Send"}
+              = f.submit class: "right-messages__bottom---message_area__send", value: "Send"
 
-            

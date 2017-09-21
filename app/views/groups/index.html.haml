@@ -9,12 +9,14 @@
             %i.fa.fa-cog
           = link_to new_group_path do
             %i.fa.fa-pencil-square-o
+
         %div.left-bar__main
-          .left-bar__main--group_name
-            - @groups.each do |group|
-              = simple_format(group.name)
-              .left-bar__main--group_name--latest_message
-                まだメッセージはありません
+          - @groups.each do |group|
+            = link_to group_messages_path(group.id) do
+              .left-bar__main--group_name
+                = simple_format(group.name)
+                .left-bar__main--group_name--latest_message
+                  まだメッセージはありません
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
