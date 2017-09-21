@@ -23,7 +23,7 @@
       %div.right-messages
         %div.right-messages__top
           %button.right-messages__top--edit_button
-            = link_to "Edit", edit_group_path(current_user)
+            = link_to "Edit", edit_group_path(@group)
 
           %p.right-messages__top--groupname
             = @group.name
