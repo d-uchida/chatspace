@@ -31,7 +31,7 @@
             Member:
             = @group.users.pluck(:name).join(", ");
         .right-messages__middle
-          = render partial: "message", locals: { message: @message}
+          = render partial: "message", locals: { message: @message }
 
         %div.right-messages__bottom
           %div.right-messages__bottom---message_area

@@ -10,18 +10,18 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+
   def create
     @message = Message.new(message_params)
     if @message.save
       redirect_to group_messages_path
-    else 
+    else
       redirect_to group_messages_path, alert: "メッセージを入力してください"
     end
   end
 
   private
   def message_params
-    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:image, :text).merge(group_id: params[:group_id], user_id: current_user.id)
   end
-
 end
