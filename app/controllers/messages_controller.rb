@@ -12,8 +12,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.save
-    redirect_to group_messages_path
+    if @message.save
+      redirect_to group_messages_path
+    else 
+      redirect_to group_messages_path, alert: "メッセージを入力してください"
+    end
   end
 
   private
