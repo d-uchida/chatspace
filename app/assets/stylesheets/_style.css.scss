@@ -38,6 +38,7 @@ html {
           &__main {
             background-color  : $left-bar__bottom-color;
             height            : calc(100% - #{$left-bar-top__height});
+            overflow: scroll;
             &--group_name {
               padding-top   : 20px;
               padding-left  : $left-bar-padding ;
