@@ -10,17 +10,10 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
-  def show
-    @messages = Messages.find(params[:id])
-  end
-
   def create
     @message = Message.new(message_params)
     @message.save
     redirect_to group_messages_path
-
-    # Message.create(text: params[:text], image: params[:image], group_id: params[:group_id], user_id: current_user.id)
-    # redirect_to group_messages_path(:group_id),method: :post
   end
 
   private
