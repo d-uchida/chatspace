@@ -5,6 +5,6 @@
       %span
         = group_message.created_at
   .right-messages__middle--message
-    = group_message.text
-    = image_tag group_message.image.to_s
+    = group_message.text if group_message.text.present?
+    = image_tag group_message.image.to_s if group_message.image.present?
 
