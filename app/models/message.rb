@@ -6,6 +6,6 @@ class Message < ApplicationRecord
 
   private
     def text_or_image
-    	text.presence or image.presence
+    	text.presence || image.presence
     end
 end
