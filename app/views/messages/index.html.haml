@@ -37,8 +37,8 @@
           %div.right-messages__bottom---message_area
             = form_for [@group, @message] do |f|
               = f.text_field :text, class: "right-messages__bottom---message_area__text", size: 40, placeholder: "type a message"
-              = f.file_field :image
-              = link_to messages_path do
+              = f.label :image do
                 %i.fa.fa-file-image-o
+                  = f.file_field :image, class: "input"
               = f.submit class: "right-messages__bottom---message_area__send", value: "Send"
 

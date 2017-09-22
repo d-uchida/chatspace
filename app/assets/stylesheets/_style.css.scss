@@ -135,7 +135,10 @@ html {
                 padding-bottom    : 16px;
                 padding-left      : 5px;
                 font-size         : $font_awesome_size;
-            }
+                input {
+                  display: none;
+                }
+              }
             &__send {
               background-color: $skyblue;
               width         : 100px;
