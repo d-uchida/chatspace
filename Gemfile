@@ -21,6 +21,8 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog'
+gem 'rspec-rails'
+gem 'factory_girl_rails', "~> 4.4.1"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -41,9 +43,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development do 
-     gem 'rspec'
+  gem 'rspec'
+
 end
 
 group :test do 
      gem 'rspec'
+     gem 'faker'
 end
