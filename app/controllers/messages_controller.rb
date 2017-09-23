@@ -1,8 +1,8 @@
 class MessagesController < ApplicationController
 
+  before_action :group_params, :current_user_groups, only: [:index, :create]
+
   def index
-    @groups = current_user.groups
-    @group = Group.find(params[:group_id])
     @message = Message.new
   end
 
@@ -11,17 +11,26 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
+    @message.group = @group
+
     if @message.save
       redirect_to group_messages_path
-    else 
-      redirect_to group_messages_path, alert: "メッセージを入力してください"
+    else
+      flash.now[:alert] = "メッセージを入力してください"
+      render action: :index
     end
   end
 
   private
   def message_params
-    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:image, :text)
   end
-
+  def group_params
+    @group = Group.find(params[:group_id])
+  end
+  def current_user_groups
+    @groups = current_user.groups
+  end
 end
+
