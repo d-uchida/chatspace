@@ -7,6 +7,8 @@ describe MessagesController, type: :controller do
   let(:messages) { create(:messages)}
   let(:text) { create(:text) }
   let(:image) { create( :image ) }
+  let(:valid_message) {{ message: attributes_for(:message), group_id: group }}
+  let(:invalid_message) {{ message: {text: "", image: ""}, group_id: group}}
 
   describe 'GET #index' do
     context "when user log in" do 
@@ -39,24 +41,36 @@ describe MessagesController, type: :controller do
     before do
       login_user user
     end
-    it "saves a message" do
-      expect do
-        post :create, params: { message: attributes_for(:message), group_id: group }
-      end.to change(Message, :count).by(1)
+    context "when a message can save" do
+      subject{
+       post :create,
+       params: valid_message
+      }
+      it "saves a message" do
+        expect do
+        subject
+        end.to change(Message, :count).by(1)
+      end
+      it "renders message index" do
+        subject
+        expect(response).to redirect_to group_messages_path
+      end 
     end
-    it "renders message index" do
-      post :create, params: { message: attributes_for(:message), group_id: group}
-      expect(response).to redirect_to group_messages_path
-    end
-    it "couldn't save the message" do
-      expect do
-        post :create, params: { message: {text: "", image: ""}, group_id: group}
-      end.to change(Message, :count).by(0)
-    end
-
-    it "moves to renders index" do
-      post :create, params: { message: {text: "", image: ""}, group_id: group}
-      expect(response).to render_template(:index)
+    context "when a message can NOT save" do
+      subject{
+        post :create,
+        params: invalid_message
+      }
+      it "couldn't save the message" do
+        subject
+        expect do
+          subject
+        end.to change(Message, :count).by(0)
+      end
+      it "moves to renders index" do
+        subject
+        expect(response).to render_template(:index)
+      end
     end
   end
 end
