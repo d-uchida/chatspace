@@ -17,19 +17,13 @@ $(function() {
                </div>`
 
    added_chat_member.append(html);
-   $(".user-search-remove").on("click", function() {
-    var id = $(this).data('user-id');
+   $(".js-remove-btn").on("click", function() {
     $(this).parent().remove();
    });
-  }
-  function NoSearchResult(No_result) {
-    var html = `<div> ${No_result}</div>`
-    search_list.append(html);
   }
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    　 console.log(input);
 
     $.ajax({
       type: 'GET',
@@ -53,7 +47,6 @@ $(function() {
   $(".chat-group-form__field").on("click",".chat-group-user__btn", function() {
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
-
     appendAddedUser(id, name);
     $(this).parent().remove();
   });
