@@ -6,12 +6,17 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-
   h1 {
     letter-spacing: 2px;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+  }
+  p.chat-group-user__name{
+    float:left;
+  }
+  a.user-search-add {
+    color: #38aef0;
   }
   &_errors {
     margin: 30px 0;
@@ -31,41 +36,64 @@
     }
   }
   &__field {
-      &--left {
-        text-align: right;
-        font-weight: bold;
-        float: left;
-        width: 30%;
-        padding-right: 20px;
-        padding-left: 20px;
-        box-sizing: border-box;
-        height:$common-height;
+    align: center;
+    padding-top: 20px;
+    &--left {
+      text-align: right;
+      font-weight: bold;
+      float: left;
+      width: 30%;
+      padding: 20px 20px;
+      box-sizing: border-box;
+    }
+    &__field:after{
+      content: "";
+      clear: both;
+      display: block;
+    }
+    &--right {
+      float: right;
+      width: 70%;
+      padding: 10px 0;
+      &___input{
+        width: 100%;
+        padding: 10px 15px;
       }
-      &--right {
-        height:$common-height;
+      &__action-btn {
+        input {
+          margin-top: 30px;
+          padding: 12px 20px;
+          color: #fff;
+          background-color: #38aef0;
+          border: 0;
+        }
+      }
+    }
+    .chat-group-user {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 10px;
+      &__name {
+      }
+      &__btn {
         float: right;
-        width: 70%;
-        &___input_form__group_name {
-          input {
-          width: 300px;
-          }
-        }
-        &__action-btn {
-          input {
-            margin-top: 30px;
-            padding: 12px 20px;
-            color: #fff;
-            background-color: #38aef0;
-            border: 0;
-          }
-        }
       }
-  &__input {
-    float: left;
-    width: 100%;
-    line-height: 30px;
-    padding: 10px 15px;
-    box-sizing: border-box;
+    }
+    &__input {
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+    }
   }
- }
 }
+.chat-group-user__btn--remove{
+  color: red;
+}
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
