@@ -1,5 +1,4 @@
 $(function() {
-
   var search_list = $("#chat_member_candidate");
   var added_chat_member = $("#added_chat_member");
 
@@ -30,9 +29,9 @@ $(function() {
     search_list.append(html);
   }
 
- $("#user-search-field").on("keyup", function() {
-  var input = $("#user-search-field").val();
-　 console.log(input);
+  $("#user-search-field").on("keyup", function() {
+    var input = $("#user-search-field").val();
+    　 console.log(input);
 
     $.ajax({
       type: 'GET',
@@ -52,15 +51,15 @@ $(function() {
         alert("ユーザー検索に失敗しました");
       }
     });
-});
+  });
 
- $(".chat-group-form__field").on("click",".chat-group-user__btn", function() {
-  var id = $(this).data('user-id');
-  var name = $(this).data('user-name');
+  $(".chat-group-form__field").on("click",".chat-group-user__btn", function() {
+    var id = $(this).data('user-id');
+    var name = $(this).data('user-name');
 
-  appendAddedUser(id, name);
-  $(this).parent().remove();
+    appendAddedUser(id, name);
+    $(this).parent().remove();
 
-});
+  });
 });
 
