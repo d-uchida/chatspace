@@ -18,7 +18,6 @@ $(function() {
                  <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${ id }", data-user-name= "${ name }">削除</a>
                </div>`
 
-
    added_chat_member.append(html);
    $(".user-search-remove").on("click", function() {
     var id = $(this).data('user-id');
@@ -26,24 +25,32 @@ $(function() {
   });
  }
 
+  function NoSearchResult(No_result) {
+    var html = `<div> ${No_result}</div>`
+    search_list.append(html);
+  }
+
  $("#user-search-field").on("keyup", function() {
   var input = $("#user-search-field").val();
+　 console.log(input);
+
     $.ajax({
       type: 'GET',
       url: '/users',
       dataType: 'json',
       data: { keyword: input },
     })
+
     .done(function(users) {
       $("#chat_member_candidate").empty();
-      if (users.length !== 0) {
+      if (users) {
         users.forEach(function(user) {
           appendUser(user);
         });
       }
-      // else {
-      //   alert("ユーザー検索に失敗しました");
-      // }
+      else {
+        alert("ユーザー検索に失敗しました");
+      }
     });
 });
 
