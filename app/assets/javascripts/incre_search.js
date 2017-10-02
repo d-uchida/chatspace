@@ -9,7 +9,6 @@ $(function() {
                 </div>`
     search_list.append(html);
   }
-
   function appendAddedUser(id, name) {
    var html = `<div class="chat-group-user clearfix id="chat-group-user-"${id}">
                <input name="group[user_ids][]" type="hidden" value="${id}">
@@ -21,9 +20,8 @@ $(function() {
    $(".user-search-remove").on("click", function() {
     var id = $(this).data('user-id');
     $(this).parent().remove();
-  });
- }
-
+   });
+  }
   function NoSearchResult(No_result) {
     var html = `<div> ${No_result}</div>`
     search_list.append(html);
@@ -39,7 +37,6 @@ $(function() {
       dataType: 'json',
       data: { keyword: input },
     })
-
     .done(function(users) {
       $("#chat_member_candidate").empty();
       if (users) {
@@ -59,7 +56,5 @@ $(function() {
 
     appendAddedUser(id, name);
     $(this).parent().remove();
-
   });
 });
-
