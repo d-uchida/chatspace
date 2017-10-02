@@ -1,34 +1,37 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form#new_chat_group.new_chat_group{"accept-charset" => "UTF-8", :action => "/chat_groups", :method => "post"}
-= render "error"
+  = form_for(@group) do |f|
+    #new_chat_group
+      = render "error"
 
-= form_for(@group) do |f|
-  .chat-group-form__field.clearfix
-    .chat-group-form__field--left
-      グループ名
-    .chat-group-form__field--right
-      .chat-group-form__field--right___input_form__group_name
-        = f.text_field :name, placeholder: "グループ名を入力してください"
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-    
-    .chat-group-form__field--left
-      チャットメンバーを追加
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        グループ名
+      .chat-group-form__field--right
+        %input.chat-group-form__field--right___input{name: "group[name]", id:"group_name", placeholder: "グループ名を入力してください"}
 
-    .chat-group-form__field--right
-      .chat-group-form__field--right___input_form
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-          = b.label { b.check_box + b.text }
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-      /
-        <div id='chat-group-users'>
-        <div class='chat-group-user clearfix' id='chat-group-user-22'>
-        <input name='chat_group[user_ids][]' type='hidden' value='22'>
-        <p class='chat-group-user__name'>seo_kyohei</p>
-        </div>
-        </div>
-    .chat-group-form__field--right
-      .chat-group-form__field--right__action-btn
-        = f.submit(value: "登録する")
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        チャットメンバーを追加
 
-        
+      .chat-group-form__field--right.clearfix
+        %input.chat-group-form__field--right___input{ id:"user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text" }
+        #chat_member_candidate
+
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        チャットメンバー
+      .chat-group-form__field--right{id: "added_chat_member"}
+        %div{class: "chat-group-user clearfix", id: "chat-group-user-#{current_user.id}"}
+          %input{name: "group[user_ids][]", type:"hidden", value: "#{current_user.id}"}
+            %p{ class: "chat-group-user__name"}
+              = current_user.name
+            %a{ class: "user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn", "data-user-id": "#{ current_user.id }", "data-user-name": "#{current_user.name}" }
+              削除
+
+    .chat-group-form__field.clearfix.chatmember
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        .chat-group-form__field--right__action-btn
+          = f.submit(value: "登録する")
+

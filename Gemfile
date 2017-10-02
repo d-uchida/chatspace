@@ -11,7 +11,6 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
@@ -21,6 +20,8 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 
 group :development, :test do
