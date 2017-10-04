@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
       var insertImage = '';
-      if (message.image) {
-        insertImage = `<img src="${message.image}">`;
+      if (message.image.url !== "") {
+        insertImage = `<img src="${message.image.url}">`;
     }
     var html = `
                 <div class="right-messages__middle--user" data-message-id="${message.id}">
@@ -33,7 +33,6 @@ $('#new_message').on('submit', function(e) {
   .done(function(data){
     var html = buildHTML(data);
     $('#msg').append(html);
-    console.log(html);
     $('.right-messages__bottom---message_area__text').val('');
     $('.right-messages').animate({scrollTop: $("#msg")[0].scrollHeight}, 'slow');
   })
