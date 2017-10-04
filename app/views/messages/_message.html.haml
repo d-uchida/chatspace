@@ -6,4 +6,5 @@
         = group_message.created_at
     .right-messages__middle--message
       = group_message.text if group_message.text.present?
+    .right-messages__middle--image
       = image_tag group_message.image.to_s if group_message.image.present?
