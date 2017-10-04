@@ -30,15 +30,16 @@
           %p.right-messages__top--member
             Member:
             = @group.users.pluck(:name).join(", ");
-        .right-messages__middle
+        .right-messages__middle#msg
           = render partial: "message", locals: { message: @message }
+        
 
-        %div.right-messages__bottom
+        %div.right-messages__bottom#message_bottom
           %div.right-messages__bottom---message_area
             = form_for [@group, @message] do |f|
-              = f.text_field :text, class: "right-messages__bottom---message_area__text", size: 40, placeholder: "type a message"
+              = f.text_field :text, class: "right-messages__bottom---message_area__text",size: 40, placeholder: "type a message"
               = f.label :image do
                 %i.fa.fa-file-image-o
                   = f.file_field :image, class: "input"
-              = f.submit class: "right-messages__bottom---message_area__send", value: "Send"
+              = f.button "Send", class: "right-messages__bottom---message_area__send", type:"submit"
 
