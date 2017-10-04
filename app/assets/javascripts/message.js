@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-      var insertImage = '';
       if (message.image.url !== "") {
         insertImage = `<img src="${message.image.url}">`;
     }
@@ -29,17 +28,16 @@ $('#new_message').on('submit', function(e) {
     dataType: 'json',
     processData: false,
     contentType: false
-})
+  })
   .done(function(data){
     var html = buildHTML(data);
     $('#msg').append(html);
     $('.right-messages__bottom---message_area__text').val('');
+    $('#message_image').val('');
     $('.right-messages').animate({scrollTop: $("#msg")[0].scrollHeight}, 'slow');
   })
   .fail(function(){
     alert('error');
   })  
 })
-
-
 });
