@@ -30,7 +30,7 @@
           %p.right-messages__top--member
             Member:
             = @group.users.pluck(:name).join(", ");
-        .right-messages__middle#msg
+        #msg.right-messages__middle
           = render partial: "message", locals: { message: @message }
         
 
