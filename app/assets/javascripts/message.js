@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // insertImage = `<img src="${message.image.url}">`;
      if (message.text !== ""&&message.image.url !== null) {
         var html = `
                 <div class="right-messages__middle--user" data-message-id="${message.id}">
@@ -42,43 +41,42 @@ $(function(){
                 </div>`
        return html;
     } else {
+   }
+  }
 
-    }
-}
+  $('#new_message').on('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData($(this).get(0));
+    var href = window.location.href;
 
-$('#new_message').on('submit', function(e) {
-  e.preventDefault();
-  var formData = new FormData($(this).get(0));
-  var href = window.location.href;
+    $.ajax({
+      url: href,
+      type: 'POST',
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('#msg').append(html);
+      $('.right-messages__bottom---message_area__text').val('');
+      $('#message_image').val('');
+      $('.right-messages').animate({scrollTop: $("#msg")[0].scrollHeight}, 'slow');
+    })
+    .fail(function(){
+      alert('error');
+    })
+  });
 
-  $.ajax({
-    url: href,
-    type: 'POST',
-    data: formData,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  })
-  .done(function(data){
-    var html = buildHTML(data);
-    $('#msg').append(html);
-    $('.right-messages__bottom---message_area__text').val('');
-    $('#message_image').val('');
-    $('.right-messages').animate({scrollTop: $("#msg")[0].scrollHeight}, 'slow');
-  })
-  .fail(function(){
-    alert('error');
-  })
-});
-
-var auto_update = function(){
-  if (location.href.match(/\/groups\/\d+\/messages/)) {
+  var auto_update = function(){
+    if (location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: location.href,
         type: 'GET',
         dataType: 'json'
       })
-      
+
       .done(function(messages) {
         var latest_id = $("#msg > div:last").data('messageId');
         var insertHTML = '';
@@ -96,9 +94,9 @@ var auto_update = function(){
       });
     } else {
       clearInterval(interval);
+    }
   }
-}
 
-setInterval(auto_update, 5 * 1000 );
+  setInterval(auto_update, 5 * 1000 );
 
 });
